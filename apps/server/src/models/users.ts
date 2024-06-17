@@ -16,6 +16,12 @@ const initUser = (sequelize: Sequelize) => {
       password_hash: {
         type: DataTypes.STRING,
       },
+      name: {
+        type: DataTypes.STRING,
+      },
+      phone_number: {
+        type: DataTypes.INTEGER,
+      },
       created_at: {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW,

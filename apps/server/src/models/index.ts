@@ -12,7 +12,7 @@ const sequelize = new Sequelize(process.env.POSTGRES_URI ?? "", {
   dialectOptions: {
     ssl: {
       ca: ca,
-      rejectUnauthorized: true,
+      rejectUnauthorized: false,
     },
   },
 });
