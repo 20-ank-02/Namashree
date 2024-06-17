@@ -1,8 +1,16 @@
 import { Sequelize, DataTypes, Model } from "sequelize";
 
+class User extends Model {
+  public user_id!: number;
+  public email!: string;
+  public password_hash!: string;
+  public name!: string;
+  public phone_number!: number;
+  public created_at!: Date;
+}
+
 const initUser = (sequelize: Sequelize) => {
-  const User = sequelize.define(
-    "User",
+  User.init(
     {
       user_id: {
         type: DataTypes.INTEGER,
@@ -28,8 +36,8 @@ const initUser = (sequelize: Sequelize) => {
       },
     },
     {
-      tableName: "users",
       timestamps: false,
+      sequelize,
     }
   );
 
